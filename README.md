@@ -19,6 +19,9 @@ Alasan mengapa sorting sangat penting:
 ### Pada Pembahasan Ini Akan Membahas:
 <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#bubble-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Bubble Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#selection-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Selection Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#insertion-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Insertion Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#merge-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Merge Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#quick-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Quick Sort</a> 
 
+[ < img  src = " https://Gist.github.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/SERVICE-icon.svg "  alt = " Dapatkan di SERVICE "  height = " 32 " /> ] ( https://example.com/... )
+
+<a href="https://example.com" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Kunjungi Situs</a>
 ---
 
 ## Bubble Sort
