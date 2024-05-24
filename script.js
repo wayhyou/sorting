@@ -1,3 +1,9 @@
+// Navbar
+const navbar = document.querySelector('#navbar');
+
+// Main
+const main = document.querySelector('#main');
+
 // Button
 const whatIsSorting = document.querySelector('#whatIsSorting');
 
