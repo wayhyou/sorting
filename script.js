@@ -1,5 +1,10 @@
 // Navbar
 const navbar = document.querySelector('#navbar');
+const navbarMobile = document.querySelector('#navbarMobile');
+const navbarResponsiveWeb = document.querySelector('#navbarResponsiveWeb');
+const navbarResponsive = document.querySelector('#navbarResponsive');
+const navbarHead = document.querySelector('#navbarHead');
+const navbarHeadImg = document.querySelector('#navbarHeadImg');
 
 // Main
 const main = document.querySelector('#main');
@@ -25,6 +30,7 @@ const quickSort_content = document.querySelector('#quickSort_content');
 // bg-gray-300
 // hover:bg-gray-300
 
+// Navbar
 whatIsSorting.addEventListener("click", () => {
 
     // Button
@@ -51,6 +57,14 @@ whatIsSorting.addEventListener("click", () => {
     insertionSort_content.classList.add('hidden');
     mergeSort_content.classList.add('hidden');
     quickSort_content.classList.add('hidden');
+
+    // Main
+    const screenWidth = window.innerWidth;
+    main.classList.remove("hidden");
+
+    if (screenWidth < 767) {
+        navbar.classList.add("hidden");
+    }
 
 });
 
@@ -198,3 +212,42 @@ quickSort.addEventListener("click", () => {
     mergeSort_content.classList.add('hidden');
 
 });
+
+// Navbar Responsive
+navbarResponsive.addEventListener("click", () => {
+    navbar.classList.toggle("hidden");
+    navbar.classList.toggle("w-50");
+    navbar.classList.toggle("w-full");
+
+    navbarHeadImg.classList.toggle("ms-5");
+    main.classList.toggle('hidden');
+});
+
+// Navbar Responsive Close
+
+
+// Media Query
+function toggleHiddenClass() {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth < 767) {
+        navbar.classList.add("hidden");
+        document.body.classList.remove("p-10");
+        document.body.classList.add("p-1");
+        document.body.classList.add("flex-col");
+        document.body.classList.remove("space-x-6");
+        navbarMobile.classList.remove("hidden");
+        navbarResponsiveWeb.classList.remove("hidden");
+    } else {
+        navbar.classList.remove("hidden");
+        document.body.classList.add("p-10");
+        document.body.classList.remove("p-1");
+        document.body.classList.remove("flex-col");
+        document.body.classList.add("space-x-6");
+        navbarMobile.classList.add("hidden");
+        navbarResponsiveWeb.classList.add("hidden");
+    }
+}
+
+toggleHiddenClass();
+window.addEventListener("resize", toggleHiddenClass);

@@ -11,12 +11,15 @@
     <!-- CSS Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center justify-start w-screen h-screen p-10 space-x-6 bg-gray-300">
+<body class="flex items-center justify-center w-screen h-screen p-10 space-x-6 bg-gray-300">
     
     <!-- Navbar Component Start -->
     <div id="navbar" class="flex flex-col items-center w-50 h-full overflow-hidden text-gray-700 bg-gray-100 rounded">
-        <a class="flex items-center w-full px-3 mt-3" href="#">
-            <img src="assets/api-svgrepo-com.svg" alt="Algorithm Logo" class="w-6 h-6">
+        <a id="navbarHead" class="flex items-center w-full px-3 mt-3" href="#">
+            <svg id="navbarResponsiveWeb" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>   
+            <img id="navbarHeadImg" src="assets/api-svgrepo-com.svg" alt="Algorithm Logo" class="w-6 h-6">
             <span class="ml-2 text-sm font-bold">Sorting Algorithm's</span>
         </a>
         <div class="w-full px-2">
@@ -69,38 +72,253 @@
     </div>
     <!-- Navbar Component End  -->
 
+    <!-- Navbar Responsive Component Start -->
+    <div id="navbarMobile" class="flex flex-col items-center w-full h-10 overflow-hidden text-gray-700 bg-gray-100 rounded">
+        <a class="flex items-center w-full px-3 mt-3" href="#">
+            <svg id="navbarResponsive" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>              
+            <img src="assets/api-svgrepo-com.svg" alt="Algorithm Logo" class="w-6 h-6 ms-5">
+            <span class="ml-2 text-sm font-bold">Sorting Algorithm's</span>
+        </a>
+    </div>
+    <!-- Navbar Responsive Component End -->
+
     <!-- Main Component Start -->
     <div id="main" class="flex flex-col items-center w-full h-full overflow-auto text-gray-700 bg-gray-100 rounded">
         <div class="w-full px-2">
             <div class="flex flex-col items-center w-full mt-3">
                 <!-- What is Sorting? -->
                 <div id="whatIsSorting_content" class="">
-                    What is Sorting?
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-4">What is Sorting?</h1>
+                        <p class="mb-2"><strong>Sorting</strong> adalah suatu proses <em>penyusunan</em> kembali <em>kumpulan objek</em> menggunakan <em>aturan</em> tertentu.</p>
+                        <ul class="list-disc pl-6 mb-4">
+                            <li>Proses dasar dalam algoritma dan struktur data.</li>
+                            <li>Pentingnya dalam mengatur dan menyusun data secara teratur.</li>
+                            <li>Digunakan dengan jumlah data yang besar.</li>
+                            <li>Harus memiliki efisiensi yang tinggi.</li>
+                            <li>Bahan pertimbangan waktu dan memori komputer yang diperlukan.</li>
+                        </ul>
+                        <blockquote class="text-gray-700 border-l-4 border-gray-400 pl-4 mb-4">
+                            <p>"Sorting algoritma didefinisikan sebagai proses penyusunan data-data mulai dari urutan terkecil menuju terbesar, begitu sebaliknya" <em>- Buku Informatika Henry Pandia</em></p>
+                        </blockquote>
+                        <p>Alasan mengapa sorting sangat penting:</p>
+                        <ul class="list-disc pl-6 mb-4">
+                            <li>Mempersingkat dalam penggunaan waktu dalam pembuatan proses program.</li>
+                            <li>Data akan di urutkan oleh algoritma sorting, tidak manual.</li>
+                            <li>Data yang dihasilkan lebih terstruktur, teratur dan sesuai dengan kebutuhan.</li>
+                            <li>Memudahkan dalam proses perubahan perilaku data.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Bubble Sort -->
                 <div id="bubbleSort_content" class="hidden">
-                    Bubble Sort
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-4">Bubble Sort</h1>
+                        <p class="text-lg">Bubble Sort adalah algoritma pengurutan paling sederhana yang bekerja dengan menukar elemen yang berdekatan berulang kali jika urutannya salah. Algoritma ini tidak cocok untuk kumpulan data besar karena kompleksitas waktu rata-rata dan kasus terburuknya cukup tinggi.</p>
+                        <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Membandingkan setiap elemen berdekatan dari kiri.</li>
+                            <li>Elemen yang lebih besar akan diletakkan di sebelah kanan.</li>
+                            <li>Step pertama akan menempatkan elemen paling besar berada pada posisi paling kanan.</li>
+                            <li>Kemudian, proses akan diulang untuk mencari nilai paling besar ke dua hingga paling besar ke -n.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Keuntungan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Mudah dipahami dan diterapkan.</li>
+                            <li>Tidak memerlukan memori tambahan.</li>
+                            <li>Stabil.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kekurangan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Memiliki kompleksitas waktu O(N^2) => Lambat untuk data besar.</li>
+                            <li>Memerlukan operator perbandingan.</li>
+                            <li>Menentukan urutan relatif elemen dalam kumpulan data masukan.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Penggunaan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Sering digunakan untuk memperkenalkan konsep algoritma pengurutan.</li>
+                            <li>Dalam grafik komputer, populer karena kemampuannya mendeteksi kesalahan kecil dan memperbaikinya hanya dengan kompleksitas linier.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kompleksitas Waktu</h2>
+                        <p class="mt-4">O(N^2): Notasi untuk menyatakan kompleksitas waktu dari sebuah algoritma atau fungsi dalam teori kompleksitas komputasional. O, singkatan dari "Order of" atau dalam bahasa Indonesia dapat diartikan sebagai "Orde dari". Notasi O digunakan dalam analisis kompleksitas algoritma untuk menunjukkan seberapa efisien atau seberapa buruk kinerja algoritma tersebut dalam hal waktu (kompleksitas waktu) atau ruang (kompleksitas ruang) saat ukuran inputnya bertambah. N, mewakili ukuran masukan, seperti jumlah elemen dalam himpunan data yang akan diurutkan. Waktu eksekusi algoritma tersebut tumbuh secara kuadratik dengan peningkatan ukuran masukan N. Artinya, ketika N bertambah, waktu eksekusi algoritma meningkat dengan faktor N^2.</p>
+                    </div>                    
                 </div>
 
                 <!-- Selection Sort -->
                 <div id="selectionSort_content" class="hidden">
-                    Selection Sort
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-4">Selection Sort</h1>
+                        <p class="text-lg">Simple and Efficient. Memilih berulang kali elemen terkecil (atau terbesar) dari bagian daftar yang tidak diurutkan dan memindahkannya ke bagian daftar yang diurutkan.</p>
+                        <p class="text-lg font-semibold mt-4">Total no. of passes (Iterasi): <span class="font-normal">N - 1</span></p>
+                        <p class="text-lg font-semibold">Total no. of comparisons (Pengecekan): <span class="font-normal">N * (N - 1) / 2</span></p>
+                        <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Memulai pengecekan data dari data ke 1 hingga data ke n.</li>
+                            <li>Menentukan bilangan dengan index terkecil dari data pada bilangan tersebut.</li>
+                            <li>Menukar bilangan index terkecil dengan bilangan pertama.</li>
+                            <li>Begitu seterusnya hingga data berhasil diurutkan semuanya.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Keuntungan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Sederhana dan mudah dimengerti.</li>
+                            <li>Bekerja dengan baik dengan kumpulan data kecil.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kekurangan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Memiliki kompleksitas waktu O(n^2), dalam rata-rata kasus terburuk dan terbaik.</li>
+                            <li>Tidak berfungsi dengan baik pada kumpulan data besar.</li>
+                            <li>Tidak mempertahankan urutan relatif item dengan kunci yang sama yang berarti tidak stabil.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Penggunaan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Ketika memori terbatas.</li>
+                            <li>Pengimplementasian yang sederhana.</li>
+                            <li>Aplikasi Embedded atau IoT dengan deterbatasan sumber daya.</li>
+                            <li>Sorting data dalam Aplikasi Mobile dengan sedikit data.</li>
+                            <li>Sorting data pada Front-End Web untuk keperluan tampilan.</li>
+                            <li>Pemrosesan data real-time dalam aplikasi yang tidak sangat sensitif terhadap kinerja.</li>
+                        </ul>
+                    </div>                    
                 </div>
 
                 <!-- Insertion Sort -->
                 <div id="insertionSort_content" class="hidden">
-                    Insertion Sort
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-4">Insertion Sort</h1>
+                        <p class="text-lg">Insertion Sort adalah algoritma pengurutan sederhana yang bekerja dengan menyisipkan setiap elemen dari daftar yang tidak disortir secara berulang ke posisi yang benar di bagian daftar yang diurutkan.</p>
+                        <p class="text-lg font-semibold mt-4">Total no. of passes (Iterasi): <span class="font-normal">N - 1</span></p>
+                        <p class="text-lg font-semibold">Total no. of comparisons (Pengecekan): <span class="font-normal">N * (N - 1) / 2</span></p>
+                        <h2 class="text-lg font-semibold mt-6">Kompleksitas Waktu Pengurutan Penyisipan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Kasus terbaik: O(N), Jika daftar sudah diurutkan, di mana N adalah jumlah elemen dalam daftar.</li>
+                            <li>Kasus rata-rata: O(N^2), Jika daftar diurutkan secara acak.</li>
+                            <li>Kasus terburuk: O(N^2), Jika daftarnya dalam urutan terbalik.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Kita harus mulai dengan elemen data kedua dari array. Elemen pertama dalam array diasumsikan telah diurutkan.</li>
+                            <li>Membandingkan data kedua dengan data kesatu. Apabila data kedua lebih kecil maka tukar posisinya.</li>
+                            <li>Data ketiga dibandingkan dengan data kesatu dan kedua. Apabila data ketiga lebih kecil tukar lagi posisinya.</li>
+                            <li>Data keempat dibandingkan dengan data ketiga hingga kesatu. Apabila data keempat lebih kecil dari seluruh data sebelumnya, maka letakkan data keempat ke posisi paling depan. Jika tidak, letakkan data pada posisi setelah data yang lebih kecil dari data keempat.</li>
+                            <li>Begitu seterusnya hingga tidak ada lagi data yang dapat dipindahkan.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Keuntungan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Sederhana dan mudah diterapkan.</li>
+                            <li>Algoritma pengurutan yang stabil.</li>
+                            <li>Efisien untuk daftar kecil dan daftar yang hampir diurutkan.</li>
+                            <li>Hemat ruang.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kekurangan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Tidak efisien untuk daftar besar.</li>
+                            <li>Tidak seefisien algoritma pengurutan lainnya (misalnya, merge sort, quick sort) untuk sebagian besar kasus.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Penggunaan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Daftarnya kecil atau hampir terurut.</li>
+                            <li>Kesederhanaan dan stabilitas itu penting.</li>
+                        </ul>
+                    </div>                    
                 </div>
 
                 <!-- Merge Sort -->
                 <div id="mergeSort_content" class="hidden">
-                    Merge Sort
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-4">Merge Sort</h1>
+                        <p class="text-lg">Merge Sort adalah algoritma pengurutan yang mengikuti pendekatan divide-and-conquer. Membagi array masukan secara rekursif menjadi subarray yang lebih kecil. Mengurutkan subarray tersebut kemudian menggabungkannya kembali untuk mendapatkan array yang diurutkan.</p>
+                        <h2 class="text-lg font-semibold mt-6">Secara Sederhana</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Membagi array menjadi dua bagian,</li>
+                            <li>Mengurutkan masing-masing bagian,</li>
+                            <li>Dan kemudian menggabungkan bagian yang telah diurutkan kembali menjadi satu.</li>
+                            <li>Proses ini diulangi hingga seluruh array diurutkan.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Divide: Bagilah daftar atau array secara rekursif menjadi dua bagian hingga tidak dapat dibagi lagi.</li>
+                            <li>Conquer: Setiap subarray diurutkan satu per satu menggunakan algoritma pengurutan gabungan.</li>
+                            <li>Merge: Subarray yang telah diurutkan digabungkan kembali menjadi satu dalam urutan yang diurutkan. Proses berlanjut hingga semua elemen dari kedua subarray telah digabungkan.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kompleksitas Waktu</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Kasus Terbaik: O(n log n), Ketika array sudah terurut atau hampir terurut.</li>
+                            <li>Kasus Rata-rata: O(n log n), Ketika array diurutkan secara acak.</li>
+                            <li>Kasus Terburuk: O(n log n), Ketika array diurutkan dalam urutan terbalik.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kompleksitas Ruang</h2>
+                        <p class="text-lg mt-4">O(n), Ruang tambahan diperlukan untuk array sementara yang digunakan selama penggabungan.</p>
+                        <h2 class="text-lg font-semibold mt-6">Keuntungan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Stability: Pengurutan gabungan adalah algoritme pengurutan yang stabil, yang berarti algoritme ini mempertahankan urutan relatif elemen yang sama dalam larik masukan.</li>
+                            <li>Guaranteed worst-case performance: Pengurutan gabungan memiliki kompleksitas waktu kasus terburuk sebesar O(N logN) , yang berarti ia bekerja dengan baik bahkan pada kumpulan data yang besar.</li>
+                            <li>Simple to implement: Pendekatan memecah-belah dan menaklukkan sangatlah mudah.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kekurangan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Space complexity: Pengurutan gabungan memerlukan memori tambahan untuk menyimpan sub-array yang digabungkan selama proses pengurutan.</li>
+                            <li>Not in-place: Pengurutan gabungan bukanlah algoritma pengurutan in-place, yang berarti memerlukan memori tambahan untuk menyimpan data yang diurutkan. Hal ini dapat menjadi kelemahan dalam aplikasi yang mengutamakan penggunaan memori.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Penggunaan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Menyortir kumpulan data besar.</li>
+                            <li>Penyortiran eksternal (ketika kumpulan data terlalu besar untuk dimasukkan ke dalam memori).</li>
+                            <li>Penghitungan inversi (menghitung jumlah inversi dalam sebuah array).</li>
+                            <li>Menemukan median dari sebuah array.</li>
+                        </ul>
+                    </div>                    
                 </div>
 
                 <!-- Quick Sort -->
                 <div id="quickSort_content" class="hidden">
-                    Quick Sort
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <h1 class="text-2xl font-bold mb-4">Quick Sort</h1>
+                        <p class="text-lg">Quick Sort adalah algoritma pengurutan yang mengikuti pendekatan Divide and Conquer, yang memilih elemen sebagai pivot dan mempartisi array tertentu di sekitar pivot yang dipilih dengan menempatkan pivot pada posisi yang benar dalam array yang diurutkan.</p>
+                        <h2 class="text-lg font-semibold mt-6">Pemilihan Pivot</h2>
+                        <p class="text-lg mt-4">Ada banyak pilihan berbeda untuk memilih pivot:</p>
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>Elemen pertama.</li>
+                            <li>Elemen terakhir.</li>
+                            <li>Elemen acak.</li>
+                            <li>Elemen tengah.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Algoritma Partisi</h2>
+                        <p class="text-lg mt-4">Algoritma partisi memulai dari elemen paling kiri dan melacak indeks elemen yang lebih kecil (atau sama dengan pivot). Saat melakukan traversing, jika kita menemukan elemen yang lebih kecil, kita menukar elemen saat ini dengan arr[i]. Jika tidak, kita mengabaikan elemen saat ini.</p>
+                        <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
+                        <p class="text-lg mt-4">Proses utama adalah partisi(). Target dari partisi adalah menempatkan pivot (elemen apa pun dapat dipilih menjadi pivot) pada posisi yang benar dalam susunan yang diurutkan dan meletakkan semua elemen yang lebih kecil di sebelah kiri pivot, dan semua elemen yang lebih besar di sebelah kanan pivot. Proses partisi diulangi secara rekursif pada setiap sisi pivot setelah pivot ditempatkan pada posisi yang benar, dan akhirnya mengurutkan array.</p>
+                        <h2 class="text-lg font-semibold mt-6">Analisis Kompleksitas</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Kasus Terbaik: Ω(N log(N)).</li>
+                            <li>Kasus Rata-rata: θ(N log(N)).</li>
+                            <li>Kasus Terburuk: O(N^2).</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Ruang Tambahan</h2>
+                        <p class="text-lg mt-4">O(1) jika kita tidak mempertimbangkan ruang tumpukan rekursif. Jika kita mempertimbangkan ruang tumpukan rekursif, dalam kasus terburuk Quick Sort dapat menghasilkan O(N).</p>
+                        <h2 class="text-lg font-semibold mt-6">Keuntungan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Algoritma divide-and-conquer yang mempermudah penyelesaian masalah.</li>
+                            <li>Efisien pada kumpulan data besar.</li>
+                            <li>Memiliki overhead yang rendah.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Kekurangan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Kompleksitas waktu kasus terburuk O(N^2).</li>
+                            <li>Bukan pilihan yang baik untuk kumpulan data kecil.</li>
+                            <li>Tidak pengurutan stabil.</li>
+                            <li>Overhead rekursi.</li>
+                        </ul>
+                        <h2 class="text-lg font-semibold mt-6">Penggunaan</h2>
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Sistem Manajemen Database.</li>
+                            <li>Aplikasi E-commerce.</li>
+                            <li>Aplikasi Manajemen Stok.</li>
+                            <li>Sistem Pencarian.</li>
+                            <li>Aplikasi Analisis Data.</li>
+                        </ul>
+                    </div>                    
                 </div>
 
             </div>

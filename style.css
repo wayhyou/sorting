@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
     /* Aturan CSS yang ingin Anda terapkan untuk perangkat berukuran smartphone */
     #navbar {
         display: none;
