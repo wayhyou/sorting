@@ -47,9 +47,9 @@ Algoritma ini **tidak cocok** untuk kumpulan **data besar** karena kompleksitas 
 **KEKURANGAN**
 * Memiliki kompleksitas waktu O(N^2) **=>** **LAMBAT** untuk **DATA BESAR**. 
 * **Berbasis perbandingan** 
-**=>** Memerlukan operator perbandingan.
-**=>** Menentukan urutan relatif elemen dalam kumpulan data masukan.
-**=>** Membatasi efisiensi algoritma dalam kasus tertentu.
+    * Memerlukan operator perbandingan.
+    * Menentukan urutan relatif elemen dalam kumpulan data masukan.
+    * Membatasi efisiensi algoritma dalam kasus tertentu.
 
 **O(N^2)**
 * Notasi untuk **menyatakan kompleksitas** waktu dari sebuah algoritma atau fungsi dalam teori kompleksitas komputasional.
