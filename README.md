@@ -261,3 +261,165 @@ Ada **banyak pilihan** berbeda untuk **memilih pivot**:
     * **Mengurutkan** data yang **besar** sebelum melakukan **operasi analisis** atau **pemrosesan lanjutan**. Ini **membantu** dalam pengolahan data yang **efisien** dan **cepat**.
 
 ---
+
+**O(n), O(log n) dan O(n log n)**
+
+* **Pencarian Linier (O(n))**: 
+    * Melakukan pencarian linier melalui **setiap halaman** buku telepon
+        * Hingga **menemukan** nama yang dicari. 
+    * Misalnya, 1000 halaman dalam buku telepon, 
+        * maka kita mungkin harus **memeriksa setiap halaman** untuk **menemukan** nomor telepon yang kita cari.
+    * **Kompleksitas waktu** pencarian linier adalah O(n), di mana **𝑛** adalah **jumlah halaman dalam buku telepon**.
+
+* **Pencarian Biner (O(log n))**: 
+    * **Alternatif** yang lebih **efisien** adalah dengan menggunakan **pencarian biner**. 
+        * Karena **nama-nama** dalam buku telepon **sudah diurutkan** berdasarkan **urutan abjad**,
+        * kita bisa **memulai** pencarian di **tengah buku** telepon.
+    * Kemudian, kita **membandingkan** nama yang dicari **dengan nama** di **halaman tengah**. 
+        * Jika **nama** tersebut **sebelum** nama di **halaman tengah**, kita bisa **membuang setengah buku** telepon yang berada **setelah halaman tengah**.
+            * Begitu pun sebaliknya.
+        * Demikian **seterusnya**, **sampai** kita **menemukan** nama yang dicari. 
+    * **Kompleksitas waktu** pencarian biner adalah **O(log n)**, di mana **𝑛** adalah **jumlah halaman dalam buku telepon**.
+
+* **Gabungan (O(n log n))**: 
+* Asumsikan bahwa kita **memiliki daftar nama-nama** yang akan kita cari dalam buku telepon,
+    * **mencari** nomor telepon untuk setiap nama. 
+* Jika kita **menggunakan pencarian biner** untuk setiap nama dalam daftar, 
+    * kita akan **membutuhkan waktu O(n log n)** untuk menemukan nomor telepon untuk semua nama dalam daftar. 
+* Ini **karena** kita harus **melakukan pencarian biner** untuk **setiap nama dalam daftar**, 
+    * yang masing-masing memiliki **kompleksitas waktu O(log n)**, dan kita **memiliki total 𝑛 nama** dalam daftar.
+
+
+**BIG O**
+Big O notation is used to analyze  the efficiency of an algorithm as its input approaches infinity, which means that as the size of the input to the algorithm grows how drastically do the space or time requirements grow with it.
+
+For example, let's say we have a dentist and she takes 30 minutes to treat one patient, as her line of patient is increases the time that it takes for her to treat all of the patients will scale linearly with the number of patients waiting in line. 
+
+This is because it always takes her a constant amount of time to treat each individual patient which is 30 minutes, this give us a general understanding of how long our dentist would take to treat 10, 20, or more patients. Because we know the constant amount of time which is 30 minutes to treat each patient. We can always calculate would take for her to treat any number of patients by multiplying the number patients times 30 minutes. 
+
+With this in mind, we can categorize her efficiency as being linear or as we would say in Big O terms O(n), where n is equal to the number of patients. 
+
+Big O(n)
+Big O(patients)
+
+We use this same technique to determine the efficiency of algorithms. We can get a general idea of how a functions time efficiency scales, by categorizing a given functions efficiency the same way that we categorize the dentist efficiency.
+
+Let's create an easily comprehensible function that scales similiary to the dentists.
+
+```
+function linearFunc(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(1000 * 100000);
+    }
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7]
+linearFunc(arr)
+```
+
+So this function is in the same linear category as our dentist.
+
+```
+console.log(1000 * 100000);
+```
+
+This line will of code takes constant time, which brings me a important point when considering the efficiency of a function, this lines that take constant time do not matter.
+Well, at least for our puposes they done, this is because if our array were some crazy length like 200 million, changing this expression to something simpler, like 1 + 1, would have a negligible effect on the efficiency of the function as a whole we'd still need iterate throught 200 millions item in an array.
+
+In fact even if the function looked like this.
+
+```
+function linearFunc(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(1000 * 100000);
+        let something = (200000000 * 200000000) / 2;
+        console.log(something);
+    }
+}
+```
+
+We would still ignore all of these constants and say that, this function scales linearly or Big O(n). Similarly, if we think back to our dentist example, we see that she took 30 minutes per patient, but even if she took three hours per patient, the amount of time it takes her to see all of her patients will still scale linearly, this can be difficult to grasp at first, but it starts to make sense over time.
+
+**Constant**
+
+```
+function constant(arr) {
+    var result = 100 * 1000;
+    return result;
+}
+```
+
+Constant is any step that doesn't scale with the input to the function, for example the time to evaluate this expression does not change with the input, because both 100 and 1000 are constants. That is these values are always the same.
+
+This expression always results in the same value.
+
+```
+var result = 100 * 1000; // 100000
+```
+
+And it always takes the same amount of time or constant time to return the same result. Just like we use Big O(n) to describe linear functions. we also habe a big O name for constant algorithms which is Big O(1).
+
+A good way to think about it is every line of code, is actually a function in and of it's self, which is actually true. For example, let's reintroduce this function. 
+
+```
+function linearFunc(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(1000 * 100000);
+        let something = (200000000 * 200000000) / 2;
+        console.log(something);
+    }
+}
+```
+
+So this line of code `for (let i = 0; i < arr.length; i++)` is the reason why the entire `linearFunc()` function is O(n). Because as the size of n is increases the number of iterations that the for loop must traverse increases as well. But take this line `console.log(1000 * 100000);` into consideration, let's for one second pretend that we have a function that contains only this line. 
+
+```
+function linearFunc(arr) {
+    console.log(1000 * 100000);
+}
+```
+
+With that function we pass in an array `arr` but the function does nothing with the array, the only operation within the function is constant, because it doesn't scale with any input. 
+So regardless of how large of an array is passed to this function. This line `console.log(1000 * 100000);` always produces the same result and this is the only line in the function, so therefore this entire function is O(1). 
+
+But wait, in this function, we have multiple lines that are O(1), yet we still prioritize  the line that is O(n) and ignore the O(1) operations. 
+
+```
+function linearFunc(arr) {
+    O(n) => for (let i = 0; i < arr.length; i++) {
+        O(1) => console.log(1000 * 100000); // O(1)
+        O(1) => let something = (200000000 * 200000000) / 2;
+        O(1) => console.log(something);
+    }
+}
+```
+
+Why is this? Well this brings us to our last important note. In Big O, we have a growth hierarchy like this:
+
+```
+O(1)       => Constant               => Good
+O(log n)   => Logarithmic            ||
+O(n)       => Linear                 ||
+O(n log n) => Linearithmic           ||
+O(n^2)     => Quadratic              ||
+O(n^3)     => Cubic                  ||
+O(2^n)     => Exponential            \/
+O(n!)      => Factorial              => Bad
+```
+
+In Big O notation, when determining the efficiency of an algorithm we only care about the worst case so that means that the worst case or the  highest order operation, trumps the operations that have better performance. So, if we add the performance of all of these lines up like so `O(n) + O(1) + O(1) + O(1) = O(n) // Ignore O(1) because constant`. 
+
+All of the lines of code that are O of 1 get cancelled out, because of in is the worst performing or highest order part of the function. And is why we ignore constants, because we are actually just eliminating the non-dominant items, because as a function's input moves towards infinity constants become less and less significant. So, to recap when evaluating an algorithm's efficiency we must take into consideration the efficiency of each step within the algortihm, we then find the highest order step or the step that has the worst performance and prioritize it over all the better  performing steps.
+Steps that are constant or that are all of one or as good as it gets in term of efficiency, so we always ignore them unless the entirety of the function is constant or O(1). And in that case we would categorize the entire function as constant or O(1). 
+
+And that is Big O notation.
+
+---
+
+Konsep Big O adalah cara untuk mengukur kinerja atau kompleksitas waktu dari algoritma atau fungsi. Ini membantu dalam memprediksi bagaimana kinerja suatu algoritma akan berubah saat ukuran masukan menjadi besar.
+
+Pernyataan yang Anda sertakan menjelaskan bagaimana Big O memperlakukan konstanta dan faktor konstan lainnya dalam analisis kompleksitas algoritma. Pada dasarnya, Big O mengabaikan faktor konstan karena fokusnya adalah pada pertumbuhan algoritma saat ukuran masukan menjadi besar. Algoritma yang memiliki kompleksitas O(1) dianggap memiliki kinerja yang konstan, yang berarti waktu eksekusi tidak tergantung pada ukuran masukan. Oleh karena itu, dalam analisis Big O, faktor konstan seperti waktu tetap diabaikan karena tidak berdampak pada pertumbuhan algoritma saat ukuran masukan menjadi besar.
+
+Jika sebuah algoritma memiliki kompleksitas waktu O(n), misalnya, ini berarti waktu eksekusi algoritma akan tumbuh secara linier seiring dengan peningkatan ukuran masukan (n). Namun, faktor konstan, seperti koefisien yang mungkin muncul dalam suatu ekspresi, tidak dipertimbangkan dalam analisis Big O karena tidak mempengaruhi pertumbuhan algoritma dalam skala yang besar.
+
+Dengan menggunakan analisis Big O, kita dapat membandingkan kinerja berbagai algoritma dan memilih yang paling efisien untuk digunakan dalam situasi tertentu, terutama ketika kita berurusan dengan masukan yang sangat besar.
