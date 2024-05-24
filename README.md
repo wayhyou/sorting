@@ -119,9 +119,9 @@ Total no. of passes (Iterasi): ***N* - 1**
 Total no. of comparisons (Pengecekan): ***N* * (*N* - 1) / 2**
 
 **Kompleksitas Waktu Pengurutan Penyisipan**
-* Kasus terbaik: **O(*N*)**, Jika daftar sudah diurutkan, di mana n adalah jumlah elemen dalam daftar.
-* Kasus rata-rata: **O(*N*^2)**, Jika daftar diurutkan secara acak
-* Kasus terburuk: **O(*N*^2)**, Jika daftarnya dalam urutan terbalik
+* Kasus **terbaik**: **O(*N*)**, Jika daftar sudah diurutkan, di mana n adalah jumlah elemen dalam daftar.
+* Kasus **rata-rata**: **O(*N*^2)**, Jika daftar diurutkan secara acak
+* Kasus **terburuk**: **O(*N*^2)**, Jika daftarnya dalam urutan terbalik
 
 **CARA KERJA**
 * Kita harus **mulai** dengan elemen **data kedua** dari array.
@@ -170,9 +170,9 @@ Total no. of comparisons (Pengecekan): ***N* * (*N* - 1) / 2**
 * **Merge**: Subarray yang telah diurutkan digabungkan kembali menjadi satu dalam urutan yang diurutkan. Proses berlanjut hingga semua elemen dari kedua subarray telah digabungkan.
 
 **Kompleksitas Waktu**
-* Kasus Terbaik: **O(n log n)**, Ketika array sudah terurut atau hampir terurut.
-* Kasus Rata-rata: **O(n log n)**, Ketika array diurutkan secara acak.
-* Kasus Terburuk: **O(n log n)**, Ketika array diurutkan dalam urutan terbalik.
+* Kasus **Terbaik**: **O(n log n)**, Ketika array sudah terurut atau hampir terurut.
+* Kasus **Rata-rata**: **O(n log n)**, Ketika array diurutkan secara acak.
+* Kasus **Terburuk**: **O(n log n)**, Ketika array diurutkan dalam urutan terbalik.
 
 **Kompleksitas Ruang**
 * **O(n)**, Ruang tambahan diperlukan untuk array sementara yang digunakan selama penggabungan.
@@ -195,6 +195,69 @@ Total no. of comparisons (Pengecekan): ***N* * (*N* - 1) / 2**
 ---
 ## Quick Sort
 
+**Quick Sort**
+* **Divide and Conquer**, yang **memilih elemen** sebagai **pivot** dan **mempartisi** array tertentu di sekitar pivot yang dipilih dengan menempatkan pivot pada posisi yang benar dalam array yang diurutkan.
 
+Ada **banyak pilihan** berbeda untuk **memilih pivot**:
+* Elemen **pertama**.
+* Elemen **terakhir**.
+* Elemen **acak**.
+* Elemen **tengah**.
+
+**Algoritma Partisi**:
+* Mulai dari elemen **paling kiri** dan **melacak** indeks elemen yang **lebih kecil** (atau **sama dengan** i). 
+* Saat melakukan **traversing**, 
+    * Jika kita **menemukan** elemen yang **lebih kecil**, kita **menukar** elemen saat ini dengan arr[i]. 
+    * Jika **tidak**, kita **mengabaikan** elemen saat ini.
+
+**CARA KERJA**
+* Proses utama **=>** *partisi()*. 
+    * Target dari partisi,
+        * **menempatkan pivot** (elemen apa pun dapat dipilih menjadi pivot) **pada posisi yang benar** dalam susunan yang diurutkan dan meletakkan semua elemen yang **lebih kecil** di **sebelah kiri pivot**, dan semua elemen yang **lebih besar** di **sebelah kanan pivot**.
+
+    * **Partisi** **=>** **rekursif** pada setiap **sisi pivot** setelah **pivot ditempatkan** pada posisi yang **benar** dan akhirnya **mengurutkan array**.
+* Karena **proses partisi** dilakukan secara **rekursif**, 
+    * Menempatkan **pivot** pada **posisi sebenarnya** dalam array yang diurutkan. 
+    * **Menempatkan pivot berulang kali pada posisi sebenarnya** akan membuat **array terurut**.
+
+**Analisis Kompleksitas Quick Sort**:
+* Kasus **Terbaik** : **Ω (N log (N))**.
+* Kasus **Rata-rata**: **θ ( N log (N))**.
+* Kasus **Terburuk**: **O(N2)**.
+
+**Ruang Tambahan**: **O(1)**
+* jika kita **tidak mempertimbangkan** ruang tumpukan rekursif.
+* Jika kita **mempertimbangkan** ruang tumpukan rekursif, dalam kasus terburuk **Quick Sort** dapat menghasilkan **O(N)**.
+
+**KEUNTUNGAN**
+* Algoritma **divide-and-conquer** yang memper**mudah** penyelesaian masalah.
+* Ini **efisien** pada kumpulan **data besar**.
+* Ini memiliki **overhead** yang **rendah**, karena hanya memerlukan sejumlah **kecil memori** untuk **berfungsi**,
+    * mengurutkan data **in-place** dan **bekerja** pada **sub-array** yang lebih kecil.
+
+**KEKURANGAN**
+* Memiliki **kompleksitas waktu** kasus **terburuk** **O(N^2)**, yang terjadi ketika **poros** dipilih dengan **buruk**.
+* **Bukan pilihan** yang **baik** untuk kumpulan **data kecil**.
+* **Bukan pengurutan stabil**, 
+    * Jika **dua elemen** memiliki **kunci yang sama**, urutan relatifnya tidak akan dipertahankan dalam keluaran yang diurutkan,
+    * Jika terjadi **Quick Sort**, karena di sini kita **menukar elemen** sesuai dengan **posisi pivot** (tanpa mempertimbangkan aslinya) posisi.
+* **Overhead Rekursi**, 
+    * Meskipun **rekursi** memungkinkan **struktur kode** yang **bersih dan elegan**, 
+    * **Menimbulkan overhead tambahan**.
+    * Dalam kasus **ekstrim** dengan **data set sangat besar** dan **kedalaman rekursi tinggi**, ini dapat menyebabkan **stack overflow**.
+
+**PENGGUNAAN**
+* Sistem Manajemen Database.
+    * **Mengurutkan** hasil **pencarian** berdasarkan **kriteria** tertentu, seperti nama, tanggal, atau nilai tertentu.
+        * Misalnya, dalam aplikasi perbankan, Quicksort dapat digunakan untuk mengurutkan transaksi berdasarkan tanggal.
+* Aplikasi E-commerce.
+    * **Mengurutkan** daftar produk berdasarkan harga, popularitas, atau **kriteria** lainnya. Ini **memungkinkan** pengguna untuk dengan mudah **menemukan** produk yang mereka **cari**.
+* Aplikasi Manajemen Stok.
+    * **Mengurutkan** daftar barang berdasarkan berbagai **kriteria**, seperti nama, kategori, atau jumlah stok. Ini **membantu** dalam **pemantauan dan pengelolaan** stok yang **efisien**.
+* Sistem Pencarian.
+    * **Mengurutkan** hasil pencarian berdasarkan **relevansi** atau **kriteria** lainnya.
+        * Misalnya, dalam mesin pencari web, hasil pencarian dapat **diurutkan** berdasarkan tingkat **relevansi** atau **popularitas**.
+* Aplikasi Analisis Data.
+    * **Mengurutkan** data yang **besar** sebelum melakukan **operasi analisis** atau **pemrosesan lanjutan**. Ini **membantu** dalam pengolahan data yang **efisien** dan **cepat**.
 
 ---
