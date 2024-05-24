@@ -16,6 +16,8 @@ Alasan mengapa sorting sangat penting:
 * Data yang dihasilkan lebih terstruktur, teratur dan  sesuai dengan kebutuhan.
 * Memudahkan dalam proses perubahan perilaku data.
 
+### Pada Pembahasan Ini Akan Membahas:
+<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#bubble-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Bubble Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#selection-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Selection Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#insertion-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Insertion Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#merge-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Merge Sort</a> <a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#quick-sort" style="display: inline-block; background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; border-radius: 5px;">Quick Sort</a> 
 
 ---
 
@@ -61,6 +63,9 @@ Algoritma ini **tidak cocok** untuk kumpulan **data besar** karena kompleksitas 
 
 **PENGGUNAAN**
 * **Sederhana** **=>** sering digunakan untuk **memperkenalkan** konsep algoritma pengurutan.
+    * Kegunaan pendidikan dan pembelajaran.
+    * Penggunaan dalam aplikasi kecil.
+    * Debugging dan pengujian.
 * Dalam **grafik komputer** **=>** **populer** **=>** kemampuannya **mendeteksi kesalahan kecil** (seperti pertukaran dua elemen saja) dalam array yang hampir diurutkan dan memperbaikinya hanya dengan kompleksitas linier (2n). 
     * Algoritma pengisian poligon (*polygon filling algorithm*).
 
@@ -71,15 +76,121 @@ Algoritma ini **tidak cocok** untuk kumpulan **data besar** karena kompleksitas 
 * **Simple** and **Efficient**
 * Memilih berulang kali elemen terkecil (atau terbesar) dari bagian daftar yang tidak diurutkan dan memindahkannya ke bagian daftar yang diurutkan. 
 
+Total no. of passes (Iterasi): ***N* - 1**
+Total no. of comparisons (Pengecekan): ***N* * (*N* - 1) / 2**
+
+**CARA KERJA**
+* **Memulai pengecekan** data dari **data ke 1** hingga **data ke n**.
+* **Menentukan** bilangan dengan index **terkecil** dari data pada bilangan tersebut.
+* **Menukar** bilangan index **terkecil** dengan bilangan **pertama**.
+* Begitu seterusnya **hingga data berhasil diurutkan semuanya**.
+
+**KEUNTUNGAN**
+* **Sederhana** dan **mudah dimengerti**.
+* **Bekerja dengan baik** dengan kumpulan **data kecil**.
+
+**KEKURANGAN**
+* Memiliki **kompleksitas waktu O(n^2)**, dalam rata-rata kasus terburuk dan terbaik.
+* **Tidak berfungsi dengan baik** pada kumpulan **data besar**.
+* Tidak mempertahankan urutan relatif item dengan kunci yang sama yang berarti **tidak stabil**.
+
+**PENGGUNAAN**
+* Ketika memori terbatas.
+* Pengimplementasian yang sederhana.
+    * Aplikasi Embedded atau IoT dengan deterbatasan dumber daya.
+    * Sorting data dalam Aplikasi Mobile dengan sedikit data.
+    * Sorting data pada Front-End Web untuk keperluan tampilan.
+    * Pemrosesan data real-time dalam aplikasi yang tidak sangat sensitif terhadap kinerja.
 
 
 ---
 ## Insertion Sort
 
+**Insertion Sort** adalah adalah algoritma pengurutan **sederhana** yang bekerja dengan **menyisipkan setiap elemen** dari daftar yang **tidak disortir** secara **berulang** ke **posisi yang benar** di bagian **daftar yang diurutkan**.
+
+Algoritma pengurutan yang **stabil**:
+* Elemen dengan nilai yang sama **mempertahankan** urutan relatifnya dalam keluaran yang diurutkan.
+
+Total no. of passes (Iterasi): ***N* - 1**
+Total no. of comparisons (Pengecekan): ***N* * (*N* - 1) / 2**
+
+**Kompleksitas Waktu Pengurutan Penyisipan**
+* Kasus terbaik: **O(*N*)**, Jika daftar sudah diurutkan, di mana n adalah jumlah elemen dalam daftar.
+* Kasus rata-rata: **O(*N*^2)**, Jika daftar diurutkan secara acak
+* Kasus terburuk: **O(*N*^2)**, Jika daftarnya dalam urutan terbalik
+
+**CARA KERJA**
+* Kita harus **mulai** dengan elemen **data kedua** dari array.
+    *  **Elemen pertama** dalam array **diasumsikan telah diurutkan**.
+* Membandingkan **data kedua** dengan **data kesatu**.
+    * Apabila data ke dua **lebih kecil** maka **tukar posisinya**.
+* **Data ketiga** dibandingkan dengan **data kesatu dan kedua**.
+    * Apabila data ketiga **lebih kecil** tukar lagi posisinya.
+* **Data keempat** dibandingkan dengan **data ketiga hingga kesatu**.
+    * Apabila data keempat **lebih kecil** dari seluruh data sebelumnya,
+    * maka letakkan data keempat ke **posisi paling depan**.
+    * **Jika tidak**, letakkan data pada posisi **setelah data yang lebih kecil** dari **data keempat**.
+* **Begitu seterusnya** hingga **tidak ada** lagi data **yang dapat dipindahkan**.
+
+**KEUNTUNGAN**
+* **Sederhana** dan **mudah diterapkan**.
+* Algoritma pengurutan yang **stabil**.
+* **Efisien** untuk **daftar kecil** dan **daftar yang hampir diurutkan**.
+* Hemat ruang.
+
+**KEKURANGAN**
+* **Tidak efisien** untuk **daftar besar**.
+* **Tidak seefisien algoritma pengurutan lainnya** (misalnya, **merge sort**, **quick sort**) untuk sebagian besar kasus.
+
+**PENGGUNAAN**
+* Daftarnya **kecil** atau **hampir terurut**.
+* **Kesederhanaan** dan **stabilitas** itu **penting**.
+
+
 ---
 ## Merge Sort
 
+**Merge Sort** adalah algoritma pengurutan yang mengikuti pendekatan **divide-and-conquer**.
+* **Membagi array** masukan secara rekursif **menjadi subarray** yang **lebih kecil**.
+* **Mengurutkan subarray** tersebut kemudian **menggabungkannya kembali** untuk mendapatkan **array** yang **diurutkan**.
+
+**Secara sederhana,**
+* **Membagi array** menjadi **dua bagian**, 
+* **Mengurutkan** masing-masing bagian, 
+* dan kemudian **menggabungkan** bagian yang telah diurutkan kembali **menjadi satu**. 
+* Proses ini **diulangi** hingga **seluruh array diurutkan**.
+
+**CARA KERJA**
+* **Divide**: Bagilah daftar atau array secara rekursif menjadi dua bagian hingga tidak dapat dibagi lagi.
+* **Conquer**: Setiap subarray diurutkan satu per satu menggunakan algoritma pengurutan gabungan.
+* **Merge**: Subarray yang telah diurutkan digabungkan kembali menjadi satu dalam urutan yang diurutkan. Proses berlanjut hingga semua elemen dari kedua subarray telah digabungkan.
+
+**Kompleksitas Waktu**
+* Kasus Terbaik: **O(n log n)**, Ketika array sudah terurut atau hampir terurut.
+* Kasus Rata-rata: **O(n log n)**, Ketika array diurutkan secara acak.
+* Kasus Terburuk: **O(n log n)**, Ketika array diurutkan dalam urutan terbalik.
+
+**Kompleksitas Ruang**
+* **O(n)**, Ruang tambahan diperlukan untuk array sementara yang digunakan selama penggabungan.
+
+**KEUNTUNGAN**
+* **Stability**: Pengurutan gabungan adalah algoritme pengurutan yang stabil, yang berarti algoritme ini mempertahankan urutan relatif elemen yang sama dalam larik masukan.
+* **Guaranteed worst-case performance**: Pengurutan gabungan memiliki kompleksitas waktu kasus terburuk sebesar O(N logN) , yang berarti ia bekerja dengan baik bahkan pada kumpulan data yang besar.
+* **Simple to implement**: Pendekatan memecah-belah dan menaklukkan sangatlah mudah.
+
+**KEKURANGAN**
+* **Space complexity**: Pengurutan gabungan **memerlukan memori tambahan** untuk menyimpan sub-array yang digabungkan selama proses pengurutan. 
+* **Not in-place**: Pengurutan gabungan **bukan**lah algoritma pengurutan **in-place**, yang berarti **memerlukan memori tambahan untuk menyimpan** data yang diurutkan. Hal ini dapat menjadi **kelemahan** dalam aplikasi yang mengutamakan **penggunaan memori**.
+
+**PENGGUNAAN**
+* Menyortir kumpulan **data besar**.
+* **Penyortiran eksternal** (ketika kumpulan data terlalu besar untuk dimasukkan ke dalam memori)
+* **Penghitungan inversi** (menghitung jumlah inversi dalam sebuah array)
+* Menemukan **median** dari sebuah array
+
 ---
 ## Quick Sort
+
+
 
 ---
