@@ -17,11 +17,11 @@ Alasan mengapa sorting sangat penting:
 * Memudahkan dalam proses perubahan perilaku data.
 
 ### Pada Pembahasan Ini Akan Membahas:
-<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#bubble-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Bubble Sort</a> 
-<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#selection-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Selection Sort</a> 
-<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#insertion-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Insertion Sort</a> 
-<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#merge-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Merge Sort</a> 
-<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#quick-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Quick Sort</a> 
+<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#bubble-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Bubble Sort</a> |
+<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#selection-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Selection Sort</a> |
+<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#insertion-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Insertion Sort</a> |
+<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#merge-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Merge Sort</a> |
+<a href="https://github.com/wayhyou/sorting?tab=readme-ov-file#quick-sort" style="display: inline-block; background-color: #008CBA; color: white; padding: 12px 24px; text-align: center; text-decoration: none; border-radius: 5px; font-size: 16px;">Quick Sort</a> |
 
 ---
 
