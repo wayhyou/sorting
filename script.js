@@ -234,7 +234,7 @@ function mainContent() {
 function toggleHiddenClass() {
     const screenWidth = window.innerWidth;
 
-    if (screenWidth < 767) {
+    if (screenWidth < 1200) {
         navbar.classList.add("h-10");
         navbar.classList.remove("h-full");
         navbar.classList.add("w-full");
