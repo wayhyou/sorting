@@ -28,6 +28,9 @@ const quickSort_content = document.querySelector('#quickSort_content');
 // Ukuran Window
 const screenWidth = window.innerWidth;
 
+// Code Section
+const codeSection = document.querySelector('#codeSection');
+
 // Navbar
 whatIsSorting.addEventListener("click", () => {
 

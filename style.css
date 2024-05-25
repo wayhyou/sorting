@@ -1,3 +1,10 @@
 /* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities'; */
+
+@media (max-width: 1199px) {
+    /* Aturan CSS yang ingin Anda terapkan untuk perangkat berukuran smartphone */
+    #codeSection {
+        width: 90vw;
+    }
+}
