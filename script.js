@@ -1,10 +1,8 @@
 // Navbar
 const navbar = document.querySelector('#navbar');
-const navbarMobile = document.querySelector('#navbarMobile');
-const navbarResponsiveWeb = document.querySelector('#navbarResponsiveWeb');
-const navbarResponsive = document.querySelector('#navbarResponsive');
-const navbarHead = document.querySelector('#navbarHead');
-const navbarHeadImg = document.querySelector('#navbarHeadImg');
+const navbarLink = document.querySelector('#navbarLink');
+const navbarBarSVG = document.querySelector('#navbarBarSVG');
+const navbarImg = document.querySelector('#navbarImg');
 
 // Main
 const main = document.querySelector('#main');
@@ -27,8 +25,8 @@ const insertionSort_content = document.querySelector('#insertionSort_content');
 const mergeSort_content = document.querySelector('#mergeSort_content');
 const quickSort_content = document.querySelector('#quickSort_content');
 
-// bg-gray-300
-// hover:bg-gray-300
+// Ukuran Window
+const screenWidth = window.innerWidth;
 
 // Navbar
 whatIsSorting.addEventListener("click", () => {
@@ -59,12 +57,7 @@ whatIsSorting.addEventListener("click", () => {
     quickSort_content.classList.add('hidden');
 
     // Main
-    const screenWidth = window.innerWidth;
-    main.classList.remove("hidden");
-
-    if (screenWidth < 767) {
-        navbar.classList.add("hidden");
-    }
+    mainContent();
 
 });
 
@@ -95,6 +88,9 @@ bubbleSort.addEventListener("click", () => {
     mergeSort_content.classList.add('hidden');
     quickSort_content.classList.add('hidden');
 
+    // Main
+    mainContent();
+
 });
 
 selectionSort.addEventListener("click", () => {
@@ -123,6 +119,9 @@ selectionSort.addEventListener("click", () => {
     insertionSort_content.classList.add('hidden');
     mergeSort_content.classList.add('hidden');
     quickSort_content.classList.add('hidden');
+
+    // Main
+    mainContent();
 
 });
 
@@ -153,6 +152,9 @@ insertionSort.addEventListener("click", () => {
     mergeSort_content.classList.add('hidden');
     quickSort_content.classList.add('hidden');
 
+    // Main
+    mainContent();
+
 });
 
 mergeSort.addEventListener("click", () => {
@@ -181,6 +183,9 @@ mergeSort.addEventListener("click", () => {
     selectionSort_content.classList.add('hidden');
     insertionSort_content.classList.add('hidden');
     quickSort_content.classList.add('hidden');
+
+    // Main
+    mainContent();
 
 });
 
@@ -211,43 +216,58 @@ quickSort.addEventListener("click", () => {
     insertionSort_content.classList.add('hidden');
     mergeSort_content.classList.add('hidden');
 
+    // Main
+    mainContent();
+
 });
 
-// Navbar Responsive
-navbarResponsive.addEventListener("click", () => {
-    navbar.classList.toggle("hidden");
-    navbar.classList.toggle("w-50");
-    navbar.classList.toggle("w-full");
+function mainContent() {
+    main.classList.remove("hidden");
 
-    navbarHeadImg.classList.toggle("ms-5");
-    main.classList.toggle('hidden');
-});
-
-// Navbar Responsive Close
-
+    if (screenWidth < 767) {
+        navbar.classList.add("h-10");
+        navbar.classList.remove("h-full");
+    }
+};
 
 // Media Query
 function toggleHiddenClass() {
     const screenWidth = window.innerWidth;
 
     if (screenWidth < 767) {
-        navbar.classList.add("hidden");
+        navbar.classList.add("h-10");
+        navbar.classList.remove("h-full");
+        navbar.classList.add("w-full");
+        navbar.classList.remove("w-50");
+
+        navbarImg.classList.add('ms-5');
+
         document.body.classList.remove("p-10");
         document.body.classList.add("p-1");
         document.body.classList.add("flex-col");
         document.body.classList.remove("space-x-6");
-        navbarMobile.classList.remove("hidden");
-        navbarResponsiveWeb.classList.remove("hidden");
+        navbarBarSVG.classList.remove('hidden');
     } else {
-        navbar.classList.remove("hidden");
+        navbar.classList.remove("h-10");
+        navbar.classList.add("h-full");
+        navbar.classList.remove("w-full");
+        navbar.classList.add("w-50");
+
+        navbarImg.classList.remove('ms-5');
+
         document.body.classList.add("p-10");
         document.body.classList.remove("p-1");
         document.body.classList.remove("flex-col");
         document.body.classList.add("space-x-6");
-        navbarMobile.classList.add("hidden");
-        navbarResponsiveWeb.classList.add("hidden");
+        navbarBarSVG.classList.add('hidden');
     }
 }
 
 toggleHiddenClass();
 window.addEventListener("resize", toggleHiddenClass);
+
+navbarBarSVG.addEventListener("click", () => {
+    navbar.classList.toggle("h-10");
+    navbar.classList.toggle("h-full");
+    main.classList.toggle("hidden");
+});
