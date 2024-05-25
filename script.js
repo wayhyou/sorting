@@ -225,7 +225,7 @@ function mainContent() {
     main.classList.remove("hidden");
 
     if (screenWidth < 767) {
-        navbar.classList.add("h-10");
+        navbar.classList.add("h-11");
         navbar.classList.remove("h-full");
     }
 };
@@ -235,7 +235,7 @@ function toggleHiddenClass() {
     const screenWidth = window.innerWidth;
 
     if (screenWidth < 1200) {
-        navbar.classList.add("h-10");
+        navbar.classList.add("h-11");
         navbar.classList.remove("h-full");
         navbar.classList.add("w-full");
         navbar.classList.remove("w-50");
@@ -248,7 +248,7 @@ function toggleHiddenClass() {
         document.body.classList.remove("space-x-6");
         navbarBarSVG.classList.remove('hidden');
     } else {
-        navbar.classList.remove("h-10");
+        navbar.classList.remove("h-11");
         navbar.classList.add("h-full");
         navbar.classList.remove("w-full");
         navbar.classList.add("w-50");
@@ -267,7 +267,7 @@ toggleHiddenClass();
 window.addEventListener("resize", toggleHiddenClass);
 
 navbarBarSVG.addEventListener("click", () => {
-    navbar.classList.toggle("h-10");
+    navbar.classList.toggle("h-11");
     navbar.classList.toggle("h-full");
     main.classList.toggle("hidden");
 });
