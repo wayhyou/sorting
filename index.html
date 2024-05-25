@@ -121,6 +121,12 @@
                     <div class="bg-gray-100 p-6 rounded-lg">
                         <h1 class="text-2xl font-bold mb-4">Bubble Sort</h1>
                         <p class="text-lg">Bubble Sort adalah algoritma pengurutan paling sederhana yang bekerja dengan menukar elemen yang berdekatan berulang kali jika urutannya salah. Algoritma ini tidak cocok untuk kumpulan data besar karena kompleksitas waktu rata-rata dan kasus terburuknya cukup tinggi.</p>
+                        <div class="flex justify-center w-full mt-3">
+                            <video controls class="w-50 h-auto rounded">
+                                <source src="assets/video/bubbleSort.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
                         <ul class="list-disc pl-6 mt-4">
                             <li>Membandingkan setiap elemen berdekatan dari kiri.</li>
@@ -157,6 +163,12 @@
                         <p class="text-lg">Simple and Efficient. Memilih berulang kali elemen terkecil (atau terbesar) dari bagian daftar yang tidak diurutkan dan memindahkannya ke bagian daftar yang diurutkan.</p>
                         <p class="text-lg font-semibold mt-4">Total no. of passes (Iterasi): <span class="font-normal">N - 1</span></p>
                         <p class="text-lg font-semibold">Total no. of comparisons (Pengecekan): <span class="font-normal">N * (N - 1) / 2</span></p>
+                        <div class="flex justify-center w-full mt-3">
+                            <video controls class="w-50 h-auto rounded">
+                                <source src="assets/video/selectionSort.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
                         <ul class="list-disc pl-6 mt-4">
                             <li>Memulai pengecekan data dari data ke 1 hingga data ke n.</li>
@@ -200,6 +212,12 @@
                             <li>Kasus rata-rata: O(N^2), Jika daftar diurutkan secara acak.</li>
                             <li>Kasus terburuk: O(N^2), Jika daftarnya dalam urutan terbalik.</li>
                         </ul>
+                        <div class="flex justify-center w-full mt-3">
+                            <video controls class="w-50 h-auto rounded">
+                                <source src="assets/video/insertionSort.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
                         <ul class="list-disc pl-6 mt-4">
                             <li>Kita harus mulai dengan elemen data kedua dari array. Elemen pertama dalam array diasumsikan telah diurutkan.</li>
@@ -240,6 +258,12 @@
                             <li>Dan kemudian menggabungkan bagian yang telah diurutkan kembali menjadi satu.</li>
                             <li>Proses ini diulangi hingga seluruh array diurutkan.</li>
                         </ul>
+                        <div class="flex justify-center w-full mt-3">
+                            <video controls class="w-50 h-auto rounded">
+                                <source src="assets/video/mergeSort.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
                         <ul class="list-disc pl-6 mt-4">
                             <li>Divide: Bagilah daftar atau array secara rekursif menjadi dua bagian hingga tidak dapat dibagi lagi.</li>
@@ -290,6 +314,12 @@
                         </ul>
                         <h2 class="text-lg font-semibold mt-6">Algoritma Partisi</h2>
                         <p class="text-lg mt-4">Algoritma partisi memulai dari elemen paling kiri dan melacak indeks elemen yang lebih kecil (atau sama dengan pivot). Saat melakukan traversing, jika kita menemukan elemen yang lebih kecil, kita menukar elemen saat ini dengan arr[i]. Jika tidak, kita mengabaikan elemen saat ini.</p>
+                        <div class="flex justify-center w-full mt-3">
+                            <video controls class="w-50 h-auto rounded">
+                                <source src="assets/video/quickSort.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <h2 class="text-lg font-semibold mt-6">Cara Kerja</h2>
                         <p class="text-lg mt-4">Proses utama adalah partisi(). Target dari partisi adalah menempatkan pivot (elemen apa pun dapat dipilih menjadi pivot) pada posisi yang benar dalam susunan yang diurutkan dan meletakkan semua elemen yang lebih kecil di sebelah kiri pivot, dan semua elemen yang lebih besar di sebelah kanan pivot. Proses partisi diulangi secara rekursif pada setiap sisi pivot setelah pivot ditempatkan pada posisi yang benar, dan akhirnya mengurutkan array.</p>
                         <h2 class="text-lg font-semibold mt-6">Analisis Kompleksitas</h2>
